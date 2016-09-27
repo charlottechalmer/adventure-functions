@@ -3,7 +3,7 @@
 	problems which are marked below with "TODO". Your assignment is to solve
 	those TODOs and get this script really up to snuff.
 */
-function run() {
+
 	var monsters = [
 		"dragon",
 		"troll",
@@ -24,25 +24,22 @@ function run() {
 		"ran from",
 		"talked to"
 	];
-
-	var heroGender;
-	if (Math.random() < 0.5) {
-		heroGender = "heroine";
-	} else {
-		heroGender = "hero";
-	}
-
 	/*
 		TODO: The following three lines of code have a lot of repetition and are
 		ripe for turning into a function! Create a function to handle choosing
 		a random element from an array instead of doing the math each time.
 	*/
-
-
-
+function run() {
+	var heroGender;
+	if (Math.random() < 0.5) {
+		heroGender = "heroine";
+	} else {
+		heroGender = "hero";
+	};
+	
 	function randomElement(x) {
-	    return x[Math.floor(Math.random() * x.length)]
-	}
+		    return x[Math.floor(Math.random() * x.length)]
+		}
 
 	var chosenMonster = randomElement(monsters);
 	var chosenWeapon = randomElement(weapons);
@@ -60,8 +57,9 @@ function run() {
 		"!";
 
 	document.getElementById("adventure").innerText = output;
+
 }
-run();
+
 	document.getElementById("new_adventure").onclick = run;
 
 	/*
